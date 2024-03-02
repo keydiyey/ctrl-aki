@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/general-styles.css">
+        <link rel="stylesheet" href="css/shrine.css">
+
+    </head>
+    <body>
+            <!-----------  Whole Page  --------------->
+
+
+            <img class="image" id="stand" value="2" src="src/shrine/gojo-stand.png">
+
+
+                
+                
+            <img class="image" id="one" value="-5" src="src/shrine/gojo.webp">
+
+            
+
+            <img class="image" id="three" value="1" src="src/shrine/gojo-panel.png">
+
+            <img class="image" id="bubble" value="3" src="src/shrine/buuble.png">
+
+
+        <script type="text/javascript">
+            document.addEventListener("mousemove", parallax);
+            function parallax(event) {
+                this.querySelectorAll(".image").forEach((shift) => {
+                    const position = shift.getAttribute("value");
+                    const x = (window.innerWidth - event.pageX * position) / 90;
+                    const y = (window.innerHeight - event.pageY * position) / 90;
+     
+                    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+                });
+            }
+        </script>
+
+
+    </body>
+</html>
